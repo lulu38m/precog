@@ -1,4 +1,4 @@
-.PHONY: project open build-release install release clean
+.PHONY: project open build-release install release notary-status finalize clean
 
 APP := build/DerivedData/Build/Products/Release/Precog.app
 EXPORTED := build/export/Precog.app
@@ -37,10 +37,18 @@ release:
 		-exportOptionsPlist Config/ExportOptions.plist -exportPath build/export -allowProvisioningUpdates
 	ditto -c -k --keepParent "$(EXPORTED)" build/notarize.zip
 	xcrun notarytool submit build/notarize.zip --keychain-profile "$(NOTARY_PROFILE)" --wait
+	$(MAKE) finalize
+
+# Liste les dernières demandes de notarisation et leur statut
+notary-status:
+	xcrun notarytool history --keychain-profile "$(NOTARY_PROFILE)"
+
+# Termine la Release une fois la notarisation acceptée (utile si l'attente a été interrompue)
+finalize:
 	xcrun stapler staple "$(EXPORTED)"
 	spctl --assess --type execute -vv "$(EXPORTED)"
+	rm -f build/Precog.zip build/notarize.zip
 	ditto -c -k --keepParent "$(EXPORTED)" build/Precog.zip
-	rm -f build/notarize.zip
 	@echo "build/Precog.zip signé et notarisé, prêt à publier"
 
 clean:

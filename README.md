@@ -23,8 +23,7 @@ Precog est une petite app de barre de menus pour macOS. Elle regarde ta main ave
 
 1. Télécharge **`Precog.zip`** dans la [dernière version](../../releases/latest).
 2. Décompresse-le et glisse **Precog.app** dans le dossier **Applications**.
-3. Ouvre Precog. Comme l'app n'est pas encore notarisée par Apple, macOS la bloque au premier lancement :
-   va dans **Réglages Système › Confidentialité et sécurité**, descends jusqu'au message concernant Precog et clique sur **Ouvrir quand même**. C'est à faire une seule fois.
+3. Ouvre Precog : l'app est signée et notarisée par Apple, elle se lance directement.
 4. Une icône ✋ apparaît dans la barre de menus et l'écran d'accueil te guide pour autoriser :
    - la **Caméra**, pour voir ta main ;
    - l'**Accessibilité**, pour que tes gestes puissent changer de bureau.
@@ -113,7 +112,8 @@ Pour changer de bureau, Precog simule des raccourcis clavier grâce à l'Accessi
 - [ ] Attraper / déplacer une fenêtre (main qui se ferme)
 - [ ] Gestes personnalisables (n'importe quel raccourci clavier)
 - [ ] Mode deux mains : zoom
-- [ ] Icône d'app et version notarisée par Apple
+- [x] Version signée et notarisée par Apple
+- [ ] Icône d'app
 
 ## Licence
 
