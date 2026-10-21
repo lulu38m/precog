@@ -5,7 +5,7 @@
 **Pilote ton Mac à mains nues, comme dans *Minority Report*.**
 
 <p align="center">
-  <img src="docs/demo.gif" alt="Démo de Precog : une main en néon balaie l'air et le Mac change de bureau" width="720">
+  <img src="docs/demo-fr.gif" alt="Démo de Precog : une main en néon balaie l'air et le Mac change de bureau" width="720">
 </p>
 
 Precog est une petite app de barre de menus pour macOS. Elle regarde ta main avec la webcam et transforme des gestes simples en actions système : pas de casque, pas de gants, juste la caméra de ton Mac.
