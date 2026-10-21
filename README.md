@@ -1,117 +1,121 @@
 # ✋ Precog
 
-**Pilote ton Mac à mains nues, comme dans *Minority Report*.**
+🇬🇧 **English** · 🇫🇷 [Français](README.fr.md)
+
+**Control your Mac with your bare hands, *Minority Report* style.**
 
 <p align="center">
-  <img src="docs/demo.gif" alt="Démo de Precog : une main en néon balaie l'air et le Mac change de bureau" width="720">
+  <img src="docs/demo.gif" alt="Precog demo: a neon hand swipes through the air and the Mac switches desktops" width="720">
 </p>
 
-Precog est une petite app de barre de menus pour macOS. Elle regarde ta main avec la webcam et transforme des gestes simples en actions système : pas de casque, pas de gants, juste la caméra de ton Mac.
+Precog is a small macOS menu bar app. It watches your hand through the webcam and turns simple gestures into system actions: no headset, no gloves, just your Mac's camera.
 
-| Geste | Action |
+| Gesture | Action |
 |---|---|
-| ✋ Doigts tendus ¼ s (le poignet peut être hors champ) | Arme la détection |
-| 👋 Balayer ← → | Bureau précédent / suivant |
-| ☝️ Balayer ↑ | Mission Control |
-| 👇 Balayer ↓ | Fenêtres de l'app (désactivé par défaut) |
+| ✋ Fingers extended for ¼ s (your wrist can be out of frame) | Arms detection |
+| 👋 Swipe ← → | Previous / next desktop |
+| ☝️ Swipe ↑ | Mission Control |
+| 👇 Swipe ↓ | App windows (off by default) |
 
-🔒 **100 % local** : la main est analysée sur ton Mac avec le framework Vision d'Apple. Aucune image n'est enregistrée ni envoyée.
+🔒 **100% on-device**: your hand is analyzed on your Mac with Apple's Vision framework. No image is ever recorded or sent anywhere.
+
+> ℹ️ The app's interface is currently in French. The labels quoted below are shown as they appear in the app, with a translation.
 
 ## Installation
 
-> Nécessite **macOS 14 Sonoma** ou plus récent et une webcam (caméra intégrée, webcam USB ou iPhone en Continuity Camera).
+> Requires **macOS 14 Sonoma** or later and a webcam (built-in camera, USB webcam, or an iPhone via Continuity Camera).
 
-1. Télécharge **`Precog.zip`** dans la [dernière version](../../releases/latest).
-2. Décompresse-le et glisse **Precog.app** dans le dossier **Applications**.
-3. Ouvre Precog : l'app est signée et notarisée par Apple, elle se lance directement.
-4. Une icône ✋ apparaît dans la barre de menus et l'écran d'accueil te guide pour autoriser :
-   - la **Caméra**, pour voir ta main ;
-   - l'**Accessibilité**, pour que tes gestes puissent changer de bureau.
-5. Crée au moins 2 bureaux (Mission Control › ＋), montre tes doigts tendus, puis balaie.
+1. Download **`Precog.zip`** from the [latest release](../../releases/latest).
+2. Unzip it and drag **Precog.app** into your **Applications** folder.
+3. Open Precog: the app is signed and notarized by Apple, so it launches right away.
+4. A ✋ icon appears in the menu bar, and the welcome screen walks you through granting:
+   - **Camera** access, to see your hand;
+   - **Accessibility** access, so your gestures can switch desktops.
+5. Create at least 2 desktops (Mission Control › ＋), hold up your extended fingers, then swipe.
 
-## Fonctionnalités
+## Features
 
-- Icône dans la barre de menus avec aperçu caméra et **squelette de la main en néon** (21 points)
-- **Mode hologramme** : ta main en néon sur fond noir, avec traînée lumineuse, sans jamais afficher l'image de la caméra
-- **Fenêtre hologramme flottante**, visible sur tous les bureaux : parfaite pour enregistrer une démo
-- **Bulle de confirmation** façon « volume macOS » à chaque geste
-- **Réglages** : caméra (dont la Vue du bureau), sensibilité, sens du balayage, choix des gestes, lancement à l'ouverture de session
-- **Arrêt d'urgence** : raccourci global (⌃⌥⌘G par défaut) pour tout mettre en pause
-- **Écran d'accueil** qui guide pour les autorisations
-- Effet **Liquid Glass** sur macOS 26, matériau flou sur macOS 14–15
+- Menu bar icon with a camera preview and a **neon hand skeleton** (21 points)
+- **Hologram mode**: your hand in neon on a black background, with a glowing trail, never showing the camera image
+- **Floating hologram window**, visible on every desktop: perfect for recording a demo
+- **Confirmation bubble**, like the macOS volume overlay, on every gesture
+- **Settings**: camera (including Desk View), sensitivity, swipe direction, gesture selection, launch at login
+- **Kill switch**: global shortcut (⌃⌥⌘G by default) to pause everything
+- **Welcome screen** that guides you through permissions
+- **Liquid Glass** effect on macOS 26, blurred material on macOS 14–15
 
-## Dépannage
+## Troubleshooting
 
-**Le geste est détecté mais le bureau ne change pas**
-- Vérifie que Precog est coché dans Réglages Système › Confidentialité et sécurité › Accessibilité.
-- S'il est déjà coché, retire-le (−), relance Precog, puis rajoute-le. Ou en terminal :
+**The gesture is detected but the desktop doesn't change**
+- Make sure Precog is checked in System Settings › Privacy & Security › Accessibility.
+- If it's already checked, remove it (−), relaunch Precog, then add it again. Or from the terminal:
   ```bash
   tccutil reset Accessibility com.precog.app
   ```
-- Vérifie que les raccourcis « Aller d'un espace à gauche / à droite » (⌃← / ⌃→) sont activés dans Réglages Système › Clavier › Raccourcis clavier › Mission Control.
+- Make sure the "Move left a space" / "Move right a space" shortcuts (⌃← / ⌃→) are enabled in System Settings › Keyboard › Keyboard Shortcuts › Mission Control.
 
-**Je dois lever la main trop haut** : dans les réglages de Precog, choisis la caméra **Vue du bureau** si elle est proposée, ou incline un peu l'écran vers toi.
+**I have to raise my hand too high**: in Precog's settings, pick the **Desk View** camera if it's offered, or tilt your screen slightly toward you.
 
-**Trop de déclenchements involontaires** : baisse la sensibilité vers « Ample » dans les réglages.
+**Too many accidental triggers**: move the sensitivity slider toward « Ample » (wide gesture) in the settings.
 
-**La caméra ne s'allume pas** : Réglages Système › Confidentialité et sécurité › Caméra › active Precog.
+**The camera doesn't turn on**: System Settings › Privacy & Security › Camera › enable Precog.
 
-## Compiler depuis les sources
+## Build from source
 
-Prérequis : Xcode 16 ou plus récent (Xcode 26 recommandé pour l'effet Liquid Glass) et [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`).
+Requirements: Xcode 16 or later (Xcode 26 recommended for the Liquid Glass effect) and [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`).
 
 ```bash
-git clone <url-de-ce-dépôt>
-cd Precog
-make            # génère Precog.xcodeproj et l'ouvre dans Xcode
+git clone <this-repo-url>
+cd precog-macos
+make            # generates Precog.xcodeproj and opens it in Xcode
 ```
 
-Dans Xcode, cible **Precog** › **Signing & Capabilities** › **Team** : choisis ton Apple ID (« Personal Team »), puis ▶️ (⌘R).
-Une signature stable évite que macOS oublie l'autorisation d'Accessibilité à chaque compilation.
+In Xcode, select the **Precog** target › **Signing & Capabilities** › **Team**: choose your Apple ID ("Personal Team"), then ▶️ (⌘R).
+A stable signature keeps macOS from forgetting the Accessibility permission on every build.
 
-| Commande | Effet |
+| Command | What it does |
 |---|---|
-| `make` | Génère le projet Xcode et l'ouvre |
-| `make install` | Compile en Release, installe dans /Applications et lance l'app |
-| `make release` | Crée `build/Precog.zip` signé « Developer ID » et notarisé par Apple (compte Apple Developer requis) |
-| `make clean` | Supprime le projet généré et les fichiers de compilation |
+| `make` | Generates the Xcode project and opens it |
+| `make install` | Builds in Release, installs into /Applications and launches the app |
+| `make release` | Creates `build/Precog.zip`, signed with Developer ID and notarized by Apple (Apple Developer account required) |
+| `make clean` | Removes the generated project and build files |
 
 ### Architecture
 
 ```
 Precog/
 ├── App/
-│   ├── PrecogApp.swift           # Point d'entrée, icône de barre de menus
-│   └── PrecogController.swift    # État global : relie caméra, moteur, actions, UI
+│   ├── PrecogApp.swift           # Entry point, menu bar icon
+│   └── PrecogController.swift    # Global state: wires camera, engine, actions, UI
 ├── Engine/
-│   ├── CameraManager.swift       # Webcam (AVFoundation) + détection de la main (Vision)
-│   ├── GestureEngine.swift       # Armement (doigts tendus) + détection des balayages
-│   ├── Gestures.swift            # Gestes, actions et réglages de détection
-│   ├── ActionPerformer.swift     # Simule ⌃← ⌃→ ⌃↑ ⌃↓ (CGEvent)
-│   ├── Permissions.swift         # Caméra et Accessibilité
-│   └── Preferences.swift         # Préférences + raccourci d'arrêt d'urgence
+│   ├── CameraManager.swift       # Webcam (AVFoundation) + hand detection (Vision)
+│   ├── GestureEngine.swift       # Arming (extended fingers) + swipe detection
+│   ├── Gestures.swift            # Gestures, actions and detection settings
+│   ├── ActionPerformer.swift     # Simulates ⌃← ⌃→ ⌃↑ ⌃↓ (CGEvent)
+│   ├── Permissions.swift         # Camera and Accessibility
+│   └── Preferences.swift         # Preferences + kill switch shortcut
 └── UI/
-    ├── MenuPanelView.swift       # Panneau de la barre de menus
-    ├── CameraPreview.swift       # Aperçu caméra en miroir
-    ├── HandSkeletonOverlay.swift # Squelette néon
-    ├── HologramView.swift        # Mode hologramme (grille, traînée, scanlines)
-    ├── HUDController.swift       # Bulle de confirmation flottante
-    ├── OnboardingView.swift      # Écran d'accueil
-    ├── SettingsView.swift        # Réglages
-    ├── WindowPresenter.swift     # Ouverture des fenêtres
-    └── Theme.swift               # Couleurs, effet verre
+    ├── MenuPanelView.swift       # Menu bar panel
+    ├── CameraPreview.swift       # Mirrored camera preview
+    ├── HandSkeletonOverlay.swift # Neon skeleton
+    ├── HologramView.swift        # Hologram mode (grid, trail, scanlines)
+    ├── HUDController.swift       # Floating confirmation bubble
+    ├── OnboardingView.swift      # Welcome screen
+    ├── SettingsView.swift        # Settings
+    ├── WindowPresenter.swift     # Window management
+    └── Theme.swift               # Colors, glass effect
 ```
 
-## Pourquoi pas sur le Mac App Store ?
+## Why not on the Mac App Store?
 
-Pour changer de bureau, Precog simule des raccourcis clavier grâce à l'Accessibilité, ce que le bac à sable du Mac App Store interdit. Comme BetterTouchTool ou Rectangle, Precog se distribue donc directement depuis GitHub.
+To switch desktops, Precog simulates keyboard shortcuts through the Accessibility API, which the Mac App Store sandbox doesn't allow. Like BetterTouchTool or Rectangle, Precog is distributed directly from GitHub.
 
-## Le mot de la fin
+## Final word
 
-Soyons honnêtes : Precog ne va pas révolutionner ta façon d'utiliser un Mac. Un glissement à trois doigts sur le trackpad reste plus rapide qu'un geste dans le vide, et ton bras te le rappellera vite.
+Let's be honest: Precog won't revolutionize the way you use your Mac. A three-finger swipe on the trackpad is still faster than waving at your screen, and your arm will remind you of that pretty quickly.
 
-C'est avant tout un projet pour le plaisir : voir jusqu'où on peut aller avec une simple webcam et les outils d'Apple. Si tu travailles sur un projet qui a besoin de suivre une main en temps réel (une installation interactive, une borne sans contact, un jeu, un outil d'accessibilité…), le code peut te servir de point de départ : prends ce dont tu as besoin.
+It's mostly a project for fun: seeing how far you can go with a plain webcam and Apple's tools. If you're working on something that needs real-time hand tracking (an interactive installation, a touchless kiosk, a game, an accessibility tool…), feel free to use this code as a starting point and take whatever you need.
 
-## Licence
+## License
 
-MIT, voir [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE).
