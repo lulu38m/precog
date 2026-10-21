@@ -106,14 +106,11 @@ Precog/
 
 Pour changer de bureau, Precog simule des raccourcis clavier grâce à l'Accessibilité, ce que le bac à sable du Mac App Store interdit. Comme BetterTouchTool ou Rectangle, Precog se distribue donc directement depuis GitHub.
 
-## Feuille de route
+## Le mot de la fin
 
-- [ ] Pincer pour cliquer
-- [ ] Attraper / déplacer une fenêtre (main qui se ferme)
-- [ ] Gestes personnalisables (n'importe quel raccourci clavier)
-- [ ] Mode deux mains : zoom
-- [x] Version signée et notarisée par Apple
-- [ ] Icône d'app
+Soyons honnêtes : Precog ne va pas révolutionner ta façon d'utiliser un Mac. Un glissement à trois doigts sur le trackpad reste plus rapide qu'un geste dans le vide, et ton bras te le rappellera vite.
+
+C'est avant tout un projet pour le plaisir : voir jusqu'où on peut aller avec une simple webcam et les outils d'Apple. Si tu travailles sur un projet qui a besoin de suivre une main en temps réel (une installation interactive, une borne sans contact, un jeu, un outil d'accessibilité…), le code peut te servir de point de départ : prends ce dont tu as besoin.
 
 ## Licence
 
