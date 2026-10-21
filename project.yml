@@ -1,0 +1,42 @@
+# Génère Precog.xcodeproj avec XcodeGen :  brew install xcodegen && xcodegen
+name: Precog
+options:
+  bundleIdPrefix: com.precog
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+targets:
+  Precog:
+    type: application
+    platform: macOS
+    scheme: {}
+    sources:
+      - path: Precog
+    info:
+      path: Config/Info.plist
+      properties:
+        CFBundleDisplayName: Precog
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        LSMinimumSystemVersion: "$(MACOSX_DEPLOYMENT_TARGET)"
+        LSUIElement: true
+        LSApplicationCategoryType: public.app-category.utilities
+        NSCameraUsageDescription: "Precog analyse la position de ta main pour reconnaître tes gestes. Tout est traité sur ton Mac : aucune image n'est enregistrée ni envoyée."
+    entitlements:
+      path: Config/Precog.entitlements
+      properties:
+        com.apple.security.device.camera: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.precog.app
+        PRODUCT_NAME: Precog
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""

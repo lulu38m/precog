@@ -1,0 +1,12 @@
+# Projet généré par XcodeGen (la source de vérité est project.yml)
+Precog.xcodeproj/
+Config/Info.plist
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# macOS
+.DS_Store
